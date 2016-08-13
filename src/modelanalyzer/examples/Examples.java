@@ -3,15 +3,15 @@ package modelanalyzer.examples;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 
-import eu.mondo.map.modeladapters.emf.EmfModelAdapter;
-import eu.mondo.map.modelanalyzer.ModelAnalyzer;
-import eu.mondo.map.modelmetrics.ModelMetric;
-import eu.mondo.map.modelmetrics.impl.ModelMetrics;
-import eu.mondo.map.modelmetrics.impl.simple.NumberOfEdges;
-import eu.mondo.map.modelmetrics.impl.simple.NumberOfNodes;
-import eu.mondo.map.tests.model.emf.network.NetworkFactory;
-import eu.mondo.map.tests.model.emf.network.Node;
-import eu.mondo.map.tests.model.emf.network.NodeContainer;
+import hu.bme.mit.mba.modeladapters.emf.EmfModelAdapter;
+import hu.bme.mit.mba.modelanalyzer.ModelAnalyzer;
+import hu.bme.mit.mba.modelmetrics.ModelMetric;
+import hu.bme.mit.mba.modelmetrics.impl.ModelMetrics;
+import hu.bme.mit.mba.modelmetrics.impl.simple.NumberOfEdges;
+import hu.bme.mit.mba.modelmetrics.impl.simple.NumberOfNodes;
+import hu.bme.mit.mba.tests.model.emf.network.NetworkFactory;
+import hu.bme.mit.mba.tests.model.emf.network.Node;
+import hu.bme.mit.mba.tests.model.emf.network.NodeContainer;
 
 public class Examples {
 

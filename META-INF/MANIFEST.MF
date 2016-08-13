@@ -5,11 +5,11 @@ Bundle-SymbolicName: modelanalyzer.examples
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.junit;bundle-version="4.12.0",
- eu.mondo.map.modelanalyzer;bundle-version="1.0.0",
- eu.mondo.map.tests.model.emf;bundle-version="1.0.0",
- eu.mondo.map.modeladapters.emf;bundle-version="1.0.0",
- eu.mondo.map.modeladapters;bundle-version="1.0.0",
- eu.mondo.map.base;bundle-version="1.0.0",
- eu.mondo.map.modelmetrics;bundle-version="1.0.0",
- eu.mondo.map.modelmetrics.impl;bundle-version="1.0.0",
+ hu.bme.mit.mba.modelanalyzer;bundle-version="1.0.0",
+ hu.bme.mit.mba.tests.model.emf;bundle-version="1.0.0",
+ hu.bme.mit.mba.modeladapters.emf;bundle-version="1.0.0",
+ hu.bme.mit.mba.modeladapters;bundle-version="1.0.0",
+ hu.bme.mit.mba.base;bundle-version="1.0.0",
+ hu.bme.mit.mba.modelmetrics;bundle-version="1.0.0",
+ hu.bme.mit.mba.modelmetrics.impl;bundle-version="1.0.0",
  com.google.guava;bundle-version="15.0.0"
