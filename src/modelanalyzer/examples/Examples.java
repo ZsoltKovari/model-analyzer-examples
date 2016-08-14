@@ -27,8 +27,8 @@ public class Examples {
 
         // the adapter represents a bridge between model and metrics
         EmfModelAdapter adapter = new EmfModelAdapter();
-        // adapter must be initialized by a container node, this will creates
-        // the index which is necessary during the evaluation
+        // adapter must be initialized by a container node, this will create
+        // an index which is necessary during the evaluation
         adapter.init(container);
 
         // calculate metrics
