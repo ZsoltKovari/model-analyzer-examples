@@ -17,83 +17,83 @@ public class Examples {
 
     @Test
     public void useConcreteMetric() {
-	System.out.println("Example for using concrete metric");
-	// init metrics
-	NumberOfNodes numberOfNodes = new NumberOfNodes();
-	NumberOfEdges numberOfEdges = new NumberOfEdges();
+        System.out.println("Example for using concrete metric");
+        // init metrics
+        NumberOfNodes numberOfNodes = new NumberOfNodes();
+        NumberOfEdges numberOfEdges = new NumberOfEdges();
 
-	// init an example model, it could be any arbitrary emf model
-	EObject container = initModel();
+        // init an example model, it could be any arbitrary emf model
+        EObject container = initModel();
 
-	// the adapter represents a bridge between model and metrics
-	EmfModelAdapter adapter = new EmfModelAdapter();
-	// adapter must be initialized by a container node, this will creates
-	// the index which is necessary during the evaluation
-	adapter.init(container);
+        // the adapter represents a bridge between model and metrics
+        EmfModelAdapter adapter = new EmfModelAdapter();
+        // adapter must be initialized by a container node, this will creates
+        // the index which is necessary during the evaluation
+        adapter.init(container);
 
-	// calculate metrics
-	numberOfNodes.evaluate(adapter);
-	numberOfEdges.evaluate(adapter);
+        // calculate metrics
+        numberOfNodes.evaluate(adapter);
+        numberOfEdges.evaluate(adapter);
 
-	System.out.println("\nResults:");
+        System.out.println("\nResults:");
 
-	// get the results
-	showResult(numberOfNodes);
-	showResult(numberOfEdges);
+        // get the results
+        showResult(numberOfNodes);
+        showResult(numberOfEdges);
     }
 
     @Test
     public void useTheAnalyzer() {
-	System.out.println("Example for using the model analyzer");
-	ModelAnalyzer analyzer = new ModelAnalyzer();
+        System.out.println("Example for using the model analyzer");
+        ModelAnalyzer analyzer = new ModelAnalyzer();
 
-	// use the ModelMetrics enum instead of referring to the concrete
-	// implementation
-	analyzer.use(ModelMetrics.NumberOfNodes).use(ModelMetrics.NumberOfEdges);
+        // use the ModelMetrics enum instead of referring to the concrete
+        // implementation
+        analyzer.use(ModelMetrics.NumberOfNodes).use(ModelMetrics.NumberOfEdges);
 
-	EObject container = initModel();
-	EmfModelAdapter adapter = new EmfModelAdapter();
-	adapter.init(container);
+        EObject container = initModel();
+        EmfModelAdapter adapter = new EmfModelAdapter();
+        adapter.init(container);
 
-	analyzer.evaluate(adapter);
+        analyzer.evaluate(adapter);
 
-	System.out.println("\nResults:");
-	showResult(analyzer.getMetric(ModelMetrics.NumberOfNodes));
-	showResult(analyzer.getMetric(ModelMetrics.NumberOfEdges));
+        System.out.println("\nResults:");
+        showResult(analyzer.getMetric(ModelMetrics.NumberOfNodes));
+        showResult(analyzer.getMetric(ModelMetrics.NumberOfEdges));
     }
 
     @Test
     public void evaluateAll() {
-	System.out.println("Example for using the model analyzer for each metrics");
-	EObject container = initModel();
-	EmfModelAdapter adapter = new EmfModelAdapter();
-	adapter.init(container);
+        System.out.println("Example for using the model analyzer for each metrics");
+        EObject container = initModel();
+        EmfModelAdapter adapter = new EmfModelAdapter();
+        adapter.init(container);
 
-	ModelAnalyzer analyzer = new ModelAnalyzer();
-	analyzer.useAll().evaluate(adapter);
+        ModelAnalyzer analyzer = new ModelAnalyzer();
+        analyzer.useAll().evaluate(adapter);
 
-	// show all
-	System.out.println("\nResults:");
-	analyzer.getMetricsInOrder().forEach(metric -> {
-	    showResult(metric);
-	});
+        // show all
+        System.out.println("\nResults:");
+        analyzer.getMetricsInOrder().forEach(metric -> {
+            showResult(metric);
+        });
     }
 
     private NodeContainer initModel() {
-	NetworkFactory factory = NetworkFactory.eINSTANCE;
-	NodeContainer container = factory.createNodeContainer();
+        NetworkFactory factory = NetworkFactory.eINSTANCE;
+        NodeContainer container = factory.createNodeContainer();
 
-	// create the network of 2 nodes and 1 edge
-	Node source = factory.createNode();
-	Node target = factory.createNode();
-	source.getDim1().add(target);
+        // create the network of 2 nodes and 1 edge
+        Node source = factory.createNode();
+        Node target = factory.createNode();
+        source.getDim1().add(target);
 
-	container.getNodes().add(source);
-	return container;
+        container.getNodes().add(source);
+        return container;
     }
 
     private void showResult(ModelMetric metric) {
-	System.out.println(String.format("Data of %s : %s", metric.getName(), metric.getData().toString()));
+        System.out.println(String.format("Data of %s : %s", metric.getName(), metric.getData().toString()));
     }
 
 }
